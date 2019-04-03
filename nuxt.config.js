@@ -7,7 +7,8 @@ export default {
       Headers of the page
      */
     head: {
-        title: pkg.name,
+        htmlAttrs: { class: 'bg-light-gray' },
+        title: 'Honeyware',
         meta: [
             { charset: 'utf-8' },
             {
@@ -20,7 +21,13 @@ export default {
                 content: pkg.description,
             },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            {
+                rel: 'stylesheet',
+                href: 'https://unpkg.com/tachyons@4.7.4/css/tachyons.min.css',
+            },
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        ],
     },
 
     /**
@@ -31,7 +38,7 @@ export default {
     /**
       Global CSS
      */
-    css: [],
+    css: ['~assets/css/main.css'],
 
     /**
       Plugins to load before mounting the App
