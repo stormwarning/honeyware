@@ -17,10 +17,13 @@
   "dependencies": {
     "@nuxtjs/pwa": "3.0.0-beta.14",
     "cross-env": "5.2.0",
+    "localforage": "1.7.3",
+    "localforage-startswith": "1.4.0",
+    "lodash.find": "4.6.0",
     "nuxt": "2.4.0"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "@vue/test-utils": "1.0.0-beta.27",
     "@zazen/eslint-config": "1.0.x",
     "@zazen/stylelint-config": "1.0.x",
     "ava": "1.0.x",
