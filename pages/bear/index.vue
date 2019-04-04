@@ -4,6 +4,11 @@
             class="flex w-100 pa4-m pa5-l mb3 mb5-l bg-white"
             @submit.prevent="processSave"
         >
+            <v-input
+                v-model="selectedCharacter.handle"
+                class="f4 outline-0"
+                type="text"
+            />
             <button
                 class="f7 tracked b link dim ph3 ph5 pv3 mb2 dib bn pointer ttu"
                 type="submit"
@@ -17,11 +22,17 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import VInput from '~/components/VInput.vue'
+
 export default {
+    components: {
+        VInput,
+    },
+
     data: () => {
         return {
             selectedCharacter: {
-                tude: [],
+                handle: '',
             },
             editing: false,
         }

@@ -24,10 +24,11 @@
             </div>
 
             <div>
+                <p class="f4 ma0 mt5 ttu fw8 tracked">Available crew</p>
                 <div
                     v-for="character in characters"
-                    :key="character"
-                    class="fl w-100 w-50-m w-25-l pa3-m pa4-l"
+                    :key="character.id"
+                    class="w-100 w-50-m w-25-l pa3-m pa4-l"
                 >
                     <article class="bg-white center ba b--black-10">
                         <div class="pv2 ph3">
