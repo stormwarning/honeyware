@@ -1,14 +1,23 @@
 <template>
     <section class="cf pa3 pt4 mw9 center">
         <form
-            class="flex w-100 pa4-m pa5-l mb3 mb5-l bg-white"
+            class="w-100 pa4-m pa5-l mb3 mb5-l bg-white"
             @submit.prevent="processSave"
         >
-            <v-input
-                v-model="selectedCharacter.handle"
-                class="f4 outline-0"
-                type="text"
-            />
+            <fieldset class="pa0 ma0 mb4 bn measure">
+                <v-input
+                    v-model="selectedCharacter.handle"
+                    class="f4 outline-0"
+                    type="text"
+                    placeholder="Name"
+                />
+                <p class="f7">
+                    Name your bear. You’re not a talking bear, per se, but you
+                    can sort of mangle human speech through your bear mouth,
+                    maybe?
+                </p>
+                <p class="f7">You can talk to each other, though.</p>
+            </fieldset>
             <button
                 class="f7 tracked b link dim ph3 ph5 pv3 mb2 dib bn pointer ttu"
                 type="submit"
