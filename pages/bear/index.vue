@@ -21,14 +21,20 @@
             </fieldset>
             <fieldset class="pa0 ma0 mb4 bn measure">
                 <span class="f6 fw5 ttu tracked">Bear type</span>
-                {{ selectedCharacter.type }}
-                <bear-type-field
-                    :value="selectedCharacter.type"
-                    @roll="updateType"
-                />
-                <div v-if="selectedCharacter.type">
-                    Type: {{ selectedTypeString }} Special skill:
-                    {{ selectedTypeSkill }}
+                <div class="flex items-center justify-between">
+                    <bear-type-field
+                        class="order-2"
+                        :value="selectedCharacter.type"
+                        @roll="updateType"
+                    />
+                    <div v-if="selectedCharacter.type">
+                        <div class="f5 fw5">
+                            {{ selectedTypeString }}
+                        </div>
+                        <div class="f7 fw7 ttu tracked grey-600">
+                            {{ selectedTypeSkill }}
+                        </div>
+                    </div>
                 </div>
             </fieldset>
             <button
@@ -58,6 +64,7 @@ export default {
 
     data: () => {
         return {
+            bearTypes: BEAR_TYPES,
             selectedCharacter: {
                 handle: '',
                 type: null,
@@ -72,11 +79,11 @@ export default {
         ...mapGetters(['getCharacterById', 'getCharacterByHandle']),
 
         selectedTypeString() {
-            return BEAR_TYPES[this.selectedCharacter.type].type || null
+            return this.bearTypes[this.selectedCharacter.type].type
         },
 
         selectedTypeSkill() {
-            return BEAR_TYPES[this.selectedCharacter.type].skill || null
+            return this.bearTypes[this.selectedCharacter.type].skill
         },
     },
 

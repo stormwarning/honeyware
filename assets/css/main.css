@@ -24,6 +24,18 @@ html {
     color: var(--grey-000);
 }
 
+.grey-600 {
+    color: var(--grey-600);
+}
+
+.grey-700 {
+    color: var(--grey-700);
+}
+
+.grey-800 {
+    color: var(--grey-800);
+}
+
 .bg-grey-800 {
     background-color: var(--grey-800);
 }
