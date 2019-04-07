@@ -1,13 +1,9 @@
 <template>
-    <section class="cf pa3 pt4 mw8 center">
-        <header class="ph4-m ph5-l">
-            <h1 class="lh-title f2 fw8 mt0 ttu tracked-mega">
-                Honey Heist rules
-            </h1>
-        </header>
-        <main class="w-100 pa4-m pa5-l mb3 mb5-l bg-white">
+    <section class="mw8 center">
+        <page-header title="Honey Heist rules" />
+        <main class="pa3 pa4-ns">
             <div class="measure">
-                <h2 class="f4 ma0 ttu fw8 tracked">Stats</h2>
+                <h2 class="ma0 f4 fw5">Stats</h2>
                 <p>
                     You have two stats.
                     <strong>Each starts with 3 points.</strong>
@@ -25,7 +21,7 @@
                     </dd>
                 </dl>
 
-                <h2 class="f4 ma0 mt5 ttu fw8 tracked">Actions</h2>
+                <h2 class="ma0 mt5 f4 fw5">Actions</h2>
                 <p>
                     When you act, and the outcome is in doubt, roll a
                     <var>d6</var>
@@ -36,7 +32,7 @@
                     and pick the lowest.
                 </p>
 
-                <h2 class="f4 ma0 mt5 ttu fw8 tracked">Changing states</h2>
+                <h2 class="ma0 mt5 f4 fw5">Changing states</h2>
                 <dl>
                     <dt class="ttu f6 fw8 tracked">Frustration</dt>
                     <dd class="ml0">
@@ -74,7 +70,7 @@
                     by eating a load of honey.
                 </p>
 
-                <h2 class="f4 ma0 mt5 ttu fw8 tracked">The end</h2>
+                <h2 class="ma0 mt5 f4 fw5">The end</h2>
                 <p>
                     If your
                     <strong>Criminal</strong>
@@ -91,5 +87,11 @@
 </template>
 
 <script>
-export default {}
+import PageHeader from '~/components/PageHeader.vue'
+
+export default {
+    components: {
+        PageHeader,
+    },
+}
 </script>

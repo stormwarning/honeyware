@@ -7,7 +7,7 @@ export default {
       Headers of the page
      */
     head: {
-        htmlAttrs: { class: 'bg-light-gray' },
+        htmlAttrs: { class: 'grey-000 bg-grey-900' },
         title: 'Honeyware',
         meta: [
             { charset: 'utf-8' },

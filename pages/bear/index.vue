@@ -1,15 +1,13 @@
 <template>
-    <section class="cf pa3 pt4 mw8 center">
-        <form
-            class="w-100 pa4-m pa5-l mb3 mb5-l bg-white"
-            @submit.prevent="processSave"
-        >
+    <section class="mw8 center">
+        <page-header :title="selectedCharacter.handle || 'Add bear'" />
+        <form class="pa3 pa4-ns" @submit.prevent="processSave">
             <fieldset class="pa0 ma0 mb4 bn measure">
                 <label class="w-100">
-                    <span class="f6 ttu tracked black-30">Name</span>
+                    <span class="f6 fw5 ttu tracked">Name</span>
                     <v-input
                         v-model="selectedCharacter.handle"
-                        class="f4 outline-0"
+                        class="pa0 pv2 input-reset bg-transparent f4 grey-000 outline-0"
                         type="text"
                         placeholder="This is where the name goes"
                     />
@@ -22,7 +20,7 @@
                 <p class="f7">You can talk to each other, though.</p>
             </fieldset>
             <fieldset class="pa0 ma0 mb4 bn measure">
-                <span class="f6 ttu tracked black-30">Bear type</span>
+                <span class="f6 fw5 ttu tracked">Bear type</span>
                 {{ selectedCharacter.type }}
                 <bear-type-field
                     :value="selectedCharacter.type"
@@ -47,12 +45,14 @@
 import { mapActions, mapGetters } from 'vuex'
 
 import BearTypeField from '~/components/BearTypeField.vue'
+import PageHeader from '~/components/PageHeader.vue'
 import VInput from '~/components/VInput.vue'
 import { BEAR_TYPES } from '~/store/tables'
 
 export default {
     components: {
         BearTypeField,
+        PageHeader,
         VInput,
     },
 
@@ -134,13 +134,13 @@ form button {
     font-family: inherit;
     background-image: linear-gradient(
         30deg,
-        #e07f21 0%,
-        #e78d1c 16%,
-        #ed9b15 33%,
-        #f2aa0d 50%,
-        #f6b904 66%,
-        #f8c800 83%,
-        #f9d800 100%
+        #e67700 0%,
+        #f08400 16%,
+        #fa9100 33%,
+        #ffa007 50%,
+        #ffb318 66%,
+        #ffc328 83%,
+        #ffd43b 100%
     );
 }
 </style>

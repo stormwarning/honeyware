@@ -1,5 +1,43 @@
 @import url('https://rsms.me/inter/inter.css');
 
+:root {
+    --grey-000: #f8f9fa;
+    --grey-100: #f1f3f5;
+    --grey-200: #e9ecef;
+    --grey-300: #dee2e6;
+    --grey-400: #ced4da;
+    --grey-500: #adb5bd;
+    --grey-600: #868e96;
+    --grey-700: #495057;
+    --grey-800: #343a40;
+    --grey-900: #212529;
+
+    --yellow-400: #ffd43b;
+    --yellow-900: #e67700;
+}
+
 html {
     font-family: 'Inter', sans-serif;
+}
+
+.grey-000 {
+    color: var(--grey-000);
+}
+
+.bg-grey-800 {
+    background-color: var(--grey-800);
+}
+
+.bg-grey-900 {
+    background-color: var(--grey-900);
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+@media screen and (min-width: 30em) {
+    .bg-transparent-ns {
+        background-color: transparent;
+    }
 }

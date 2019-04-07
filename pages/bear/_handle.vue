@@ -1,18 +1,20 @@
 <template>
-    <section class="cf pa3 pt4 mw8 center">
-        <header class="ph4-m ph5-l">
-            <h1 class="lh-title f2 fw8 mt0 ttu tracked-mega">
-                {{ selectedCharacter.handle }}
-            </h1>
-        </header>
-        <main class="w-100 pa4-m pa5-l mb3 mb5-l bg-white"></main>
+    <section class="mw8 center">
+        <page-header :title="selectedCharacter.handle" />
+        <main class="pa3 pa4-ns"></main>
     </section>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import PageHeader from '~/components/PageHeader.vue'
+
 export default {
+    components: {
+        PageHeader,
+    },
+
     data: () => {
         return {
             selectedCharacter: {},
