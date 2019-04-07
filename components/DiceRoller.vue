@@ -2,7 +2,7 @@
     <button
         class="w3 h3 pa0 bn br-100 white outline-0 pointer"
         type="button"
-        @click="rollForType"
+        @click="rollDie"
     >
         <div class="flex items-center justify-center">
             <svg
@@ -28,10 +28,12 @@
 </template>
 
 <script>
-import { BEAR_TYPES } from '~/store/tables'
-
 export default {
     props: {
+        sides: {
+            type: Number,
+            default: 6,
+        },
         value: {
             type: Number,
             default: null,
@@ -40,13 +42,13 @@ export default {
 
     data: () => {
         return {
-            selectedType: '',
+            roll: null,
         }
     },
 
     methods: {
-        rollForType() {
-            this.$emit('roll', Math.floor(Math.random() * BEAR_TYPES.length))
+        rollDie() {
+            this.$emit('roll', Math.floor(Math.random() * this.sides))
         },
     },
 }

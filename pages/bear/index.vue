@@ -22,12 +22,12 @@
             <fieldset class="pa0 ma0 mb4 bn measure">
                 <span class="f6 fw5 ttu tracked">Bear type</span>
                 <div class="flex items-center justify-between">
-                    <bear-type-field
+                    <dice-roller
                         class="order-2"
                         :value="selectedCharacter.type"
                         @roll="updateType"
                     />
-                    <div v-if="selectedCharacter.type">
+                    <div v-if="selectedCharacter.type !== null">
                         <div class="f5 fw5">
                             {{ selectedTypeString }}
                         </div>
@@ -50,14 +50,14 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import BearTypeField from '~/components/BearTypeField.vue'
+import DiceRoller from '~/components/DiceRoller.vue'
 import PageHeader from '~/components/PageHeader.vue'
 import VInput from '~/components/VInput.vue'
 import { BEAR_TYPES } from '~/store/tables'
 
 export default {
     components: {
-        BearTypeField,
+        DiceRoller,
         PageHeader,
         VInput,
     },
