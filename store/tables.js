@@ -1,9 +1,9 @@
 export const BEAR_TYPES = [
-    { type: 'Grizzly', skill: 'Terrify' },
-    { type: 'Polar', skill: 'Swim' },
-    { type: 'Panda', skill: 'Eat anything that looks like bamboo' },
-    { type: 'Black', skill: 'Climb' },
-    { type: 'Sun', skill: 'Sense honey' },
+    { type: 'Grizzly Bear', skill: 'Terrify' },
+    { type: 'Polar Bear', skill: 'Swim' },
+    { type: 'Panda Bear', skill: 'Eat anything that looks like bamboo' },
+    { type: 'Black Bear', skill: 'Climb' },
+    { type: 'Sun Bear', skill: 'Sense honey' },
     { type: 'Honey Badger', skill: 'Carnage' },
 ]
 
