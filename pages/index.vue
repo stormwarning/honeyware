@@ -28,59 +28,10 @@
                     Add a Bear
                 </nuxt-link>
             </div>
-            <div
-                v-for="character in characters"
-                :key="character.id"
-                class="w-100 w-50-ns"
-            >
-                <nuxt-link
-                    class="pa3 db bg-grey-800 center br4 grey-000 no-underline"
-                    :to="/bear/ + character.handle"
-                >
-                    <div class="f5 fw5">
-                        {{ character.handle }}
-                    </div>
-                    <div>{{ character.type }}</div>
-                    <div>{{ character.role }}</div>
-                    <div class="pa3">
-                        <button
-                            class="ph2 pv1 b0 br-pill"
-                            @click="confirmDeleteCharacter(character)"
-                        >
-                            <div class="flex items-center justify-center">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="feather feather-trash-2"
-                                >
-                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                    <path
-                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                                    ></path>
-                                    <line
-                                        x1="10"
-                                        y1="11"
-                                        x2="10"
-                                        y2="17"
-                                    ></line>
-                                    <line
-                                        x1="14"
-                                        y1="11"
-                                        x2="14"
-                                        y2="17"
-                                    ></line>
-                                </svg>
-                            </div>
-                        </button>
-                    </div>
-                </nuxt-link>
+            <div class="crew-grid mt3 mt4-l">
+                <div v-for="character in characters" :key="character.id">
+                    <bear-card :character="character" />
+                </div>
             </div>
         </main>
     </div>
@@ -89,10 +40,12 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 
+import BearCard from '~/components/BearCard.vue'
 import PageHeader from '~/components/PageHeader.vue'
 
 export default {
     components: {
+        BearCard,
         PageHeader,
     },
 
@@ -119,3 +72,18 @@ export default {
     },
 }
 </script>
+
+<style>
+.crew-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 6rem);
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-flow: row;
+    grid-gap: 1rem;
+}
+@media screen and (min-width: 45em) {
+    .crew-grid {
+        grid-template-columns: repeat(2, minmax(auto, 50%));
+    }
+}
+</style>
