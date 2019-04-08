@@ -25,18 +25,87 @@
                     <dice-roller
                         class="order-2"
                         :value="selectedCharacter.type"
-                        @roll="updateType"
+                        @roll="(num) => updateSheet('type', num)"
                     />
                     <div v-if="selectedCharacter.type !== null">
                         <div class="f5 fw5">
-                            {{ selectedTypeString }}
+                            {{ selectedCharacter.typeString }}
                         </div>
                         <div class="f7 fw7 ttu tracked grey-600">
-                            {{ selectedTypeSkill }}
+                            {{ selectedCharacter.skillString }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        <div class="f5 fw5 grey-600">
+                            Roll for your bear type
                         </div>
                     </div>
                 </div>
             </fieldset>
+
+            <fieldset class="pa0 ma0 mb4 bn measure">
+                <span class="f6 fw5 ttu tracked">Descriptor</span>
+                <div class="flex items-center justify-between">
+                    <dice-roller
+                        class="order-2"
+                        :value="selectedCharacter.descriptor"
+                        @roll="(num) => updateSheet('descriptor', num)"
+                    />
+                    <div v-if="selectedCharacter.descriptor !== null">
+                        <div class="f5 fw5">
+                            {{ selectedCharacter.descriptorString }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        <div class="f5 fw5 grey-600">
+                            Roll for your descriptor
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="pa0 ma0 mb4 bn measure">
+                <span class="f6 fw5 ttu tracked">Role</span>
+                <div class="flex items-center justify-between">
+                    <dice-roller
+                        class="order-2"
+                        :value="selectedCharacter.role"
+                        @roll="(num) => updateSheet('role', num)"
+                    />
+                    <div v-if="selectedCharacter.role !== null">
+                        <div class="f5 fw5">
+                            {{ selectedCharacter.roleString }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        <div class="f5 fw5 grey-600">
+                            Roll for your role on the crew
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="pa0 ma0 mb4 bn measure">
+                <span class="f6 fw5 ttu tracked">Hat (Optional)</span>
+                <div class="flex items-center justify-between">
+                    <dice-roller
+                        class="order-2"
+                        :sides="8"
+                        :value="selectedCharacter.hat"
+                        @roll="(num) => updateSheet('hat', num)"
+                    />
+                    <div v-if="selectedCharacter.hat !== null">
+                        <div class="f5 fw5">
+                            {{ selectedCharacter.hatString }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        <div class="f5 fw5 grey-600">
+                            Roll for your optional hat
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
             <button
                 class="f7 tracked b link dim ph3 ph5 pv3 mb2 dib bn pointer ttu"
                 type="submit"
@@ -53,7 +122,12 @@ import { mapActions, mapGetters } from 'vuex'
 import DiceRoller from '~/components/DiceRoller.vue'
 import PageHeader from '~/components/PageHeader.vue'
 import VInput from '~/components/VInput.vue'
-import { BEAR_TYPES } from '~/store/tables'
+import {
+    BEAR_TYPES,
+    BEAR_DESCRIPTORS,
+    BEAR_ROLES,
+    BEAR_HATS,
+} from '~/store/tables'
 
 export default {
     components: {
@@ -64,12 +138,16 @@ export default {
 
     data: () => {
         return {
-            bearTypes: BEAR_TYPES,
+            BEAR_TYPES,
+            BEAR_DESCRIPTORS,
+            BEAR_ROLES,
+            BEAR_HATS,
             selectedCharacter: {
                 handle: '',
                 type: null,
                 descriptor: null,
                 role: null,
+                hat: null,
             },
             editing: false,
         }
@@ -79,11 +157,23 @@ export default {
         ...mapGetters(['getCharacterById', 'getCharacterByHandle']),
 
         selectedTypeString() {
-            return this.bearTypes[this.selectedCharacter.type].type
+            return this.BEAR_TYPES[this.selectedCharacter.type].type
         },
 
         selectedTypeSkill() {
-            return this.bearTypes[this.selectedCharacter.type].skill
+            return this.BEAR_TYPES[this.selectedCharacter.type].skill
+        },
+
+        selectedDescriptor() {
+            return this.BEAR_DESCRIPTORS[this.selectedCharacter.descriptor]
+        },
+
+        selectedRole() {
+            return this.BEAR_ROLES[this.selectedCharacter.role]
+        },
+
+        selectedHat() {
+            return this.BEAR_HATS[this.selectedCharacter.hat]
         },
     },
 
@@ -107,9 +197,19 @@ export default {
     methods: {
         ...mapActions(['createCharacter', 'updateCharacter', 'loadCharacters']),
 
-        updateType(type) {
-            console.log('type', type)
-            this.selectedCharacter.type = type
+        updateSheet(field, value) {
+            let table = `BEAR_${field.toUpperCase()}S`
+
+            this.selectedCharacter[field] = value
+
+            if (field === 'type') {
+                this.selectedCharacter[`${field}String`] = this[table][
+                    value
+                ].type
+                this.selectedCharacter['skillString'] = this[table][value].skill
+            } else {
+                this.selectedCharacter[`${field}String`] = this[table][value]
+            }
         },
 
         resetAndGo() {
