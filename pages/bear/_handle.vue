@@ -1,7 +1,20 @@
 <template>
     <section class="mw8 center">
         <page-header :title="selectedCharacter.handle" />
-        <main class="pa3 pa4-ns"></main>
+        <main class="pa3 pa4-ns">
+            {{ selectedCharacter.handle }}
+            <br />
+            {{ selectedCharacter.typeString }}
+            <br />
+            {{ selectedCharacter.skillString }}
+            <br />
+            {{ selectedCharacter.descriptorString }}
+            <br />
+            {{ selectedCharacter.roleString }}
+            <br />
+            {{ selectedCharacter.hatString }}
+            <br />
+        </main>
     </section>
 </template>
 
