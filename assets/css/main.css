@@ -24,16 +24,20 @@ html {
     color: var(--grey-000);
 }
 
+.grey-500 {
+    color: var(--grey-500);
+}
+
 .grey-600 {
     color: var(--grey-600);
 }
 
-.grey-700 {
-    color: var(--grey-700);
+.yellow-400 {
+    color: var(--yellow-400);
 }
 
-.grey-800 {
-    color: var(--grey-800);
+.b--grey-700 {
+    border-color: var(--grey-700);
 }
 
 .bg-grey-800 {

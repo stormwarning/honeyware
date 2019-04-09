@@ -2,7 +2,7 @@
     <section class="mw8 center">
         <page-header :title="selectedCharacter.handle || 'Add bear'" />
         <form class="pa3 pa4-ns" @submit.prevent="processSave">
-            <fieldset class="pa0 ma0 mb4 bn measure">
+            <fieldset class="pa0 ma0 bn measure">
                 <label class="w-100">
                     <span class="f6 fw5 ttu tracked">Name</span>
                     <v-input
@@ -19,8 +19,8 @@
                 </p>
                 <p class="f7">You can talk to each other, though.</p>
             </fieldset>
-            <fieldset class="pa0 ma0 mb4 bn measure">
-                <span class="f6 fw5 ttu tracked">Bear type</span>
+
+            <fieldset class="pa0 ma0 mt4 bn measure bg-grey-800">
                 <div class="flex items-center justify-between">
                     <dice-roller
                         class="order-2"
@@ -37,14 +37,11 @@
                     </div>
                     <div v-else>
                         <div class="f5 fw5 grey-600">
-                            Roll for your bear type
+                            Bear type
                         </div>
                     </div>
                 </div>
-            </fieldset>
 
-            <fieldset class="pa0 ma0 mb4 bn measure">
-                <span class="f6 fw5 ttu tracked">Descriptor</span>
                 <div class="flex items-center justify-between">
                     <dice-roller
                         class="order-2"
@@ -58,13 +55,11 @@
                     </div>
                     <div v-else>
                         <div class="f5 fw5 grey-600">
-                            Roll for your descriptor
+                            Descriptor
                         </div>
                     </div>
                 </div>
-            </fieldset>
-            <fieldset class="pa0 ma0 mb4 bn measure">
-                <span class="f6 fw5 ttu tracked">Role</span>
+
                 <div class="flex items-center justify-between">
                     <dice-roller
                         class="order-2"
@@ -78,14 +73,11 @@
                     </div>
                     <div v-else>
                         <div class="f5 fw5 grey-600">
-                            Roll for your role on the crew
+                            Crew role
                         </div>
                     </div>
                 </div>
-            </fieldset>
 
-            <fieldset class="pa0 ma0 mb4 bn measure">
-                <span class="f6 fw5 ttu tracked">Hat (Optional)</span>
                 <div class="flex items-center justify-between">
                     <dice-roller
                         class="order-2"
@@ -100,18 +92,20 @@
                     </div>
                     <div v-else>
                         <div class="f5 fw5 grey-600">
-                            Roll for your optional hat
+                            Hat (Optional)
                         </div>
                     </div>
                 </div>
             </fieldset>
 
-            <button
-                class="f7 tracked b link dim ph3 ph5 pv3 mb2 dib bn pointer ttu"
-                type="submit"
-            >
-                Submit
-            </button>
+            <div class="measure ph4">
+                <button
+                    class="w-100 ph3 ph5 pv3 mb2 bn br-pill pointer ttu f7 fw7 tracked white dim"
+                    type="submit"
+                >
+                    Submit
+                </button>
+            </div>
         </form>
     </section>
 </template>
