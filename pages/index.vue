@@ -76,9 +76,8 @@ export default {
 <style>
 .crew-grid {
     display: grid;
-    grid-template-rows: repeat(auto-fill, 6rem);
     grid-template-columns: repeat(1, 100%);
-    grid-auto-flow: row;
+    grid-auto-flow: row dense;
     grid-gap: 1rem;
 }
 @media screen and (min-width: 45em) {

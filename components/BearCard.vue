@@ -3,13 +3,15 @@
         class="bear-card flex pa3 db bg-grey-800 center br4 grey-000 no-underline"
         :to="/bear/ + character.handle"
     >
-        <div class="w3 h3 br3 bg-grey-900" />
+        <div class="flex-shrink-0 w3 h3 br3 bg-grey-900" />
         <div class="ml3 flex-auto">
             <div class="f4 fw4">
                 {{ character.handle }}
             </div>
-            <div class="flex items-center f6 fw5 tracked ttu grey-600">
-                <div class="flex items-center">
+            <div
+                class="bear-card__details flex items-center flex-wrap f6 fw5 tracked ttu grey-600"
+            >
+                <div class="flex items-center mr3">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -28,7 +30,7 @@
                     </svg>
                     {{ character.typeString }}
                 </div>
-                <div class="flex items-center ml3">
+                <div class="flex items-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -108,5 +110,9 @@ export default {
 <style>
 .bear-card {
     line-height: 2rem;
+}
+
+.bear-card__details {
+    line-height: 1.5rem;
 }
 </style>

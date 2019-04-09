@@ -24,7 +24,7 @@ export default {
         link: [
             {
                 rel: 'stylesheet',
-                href: 'https://unpkg.com/tachyons@4.7.4/css/tachyons.min.css',
+                href: 'https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css',
             },
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],

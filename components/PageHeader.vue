@@ -1,6 +1,6 @@
 <template>
     <header
-        class="flex items-center justify-between ph3 ph4-ns pv4-ns bg-grey-800 bg-transparent-ns bb-ns b--white-10"
+        class="flex items-center justify-between ph3 ph4-ns pv4 bg-grey-800 bg-transparent-ns bb-ns b--white-10"
     >
         <nuxt-link class="f6 grey-000 dim no-underline" to="/">
             <svg

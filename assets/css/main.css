@@ -12,6 +12,7 @@
     --grey-800: #343a40;
     --grey-900: #212529;
 
+    --yellow-300: #ffe066;
     --yellow-400: #ffd43b;
     --yellow-900: #e67700;
 }
@@ -30,6 +31,10 @@ html {
 
 .grey-600 {
     color: var(--grey-600);
+}
+
+.yellow-300 {
+    color: var(--yellow-300);
 }
 
 .yellow-400 {
