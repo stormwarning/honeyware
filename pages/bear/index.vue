@@ -9,7 +9,7 @@
                         v-model="selectedCharacter.handle"
                         class="pa0 pv2 input-reset bg-transparent f4 grey-000 outline-0"
                         type="text"
-                        placeholder="This is where the name goes"
+                        :placeholder="namePlaceholder"
                     />
                 </label>
                 <p class="f7">
@@ -117,10 +117,11 @@ import DiceRoller from '~/components/DiceRoller.vue'
 import PageHeader from '~/components/PageHeader.vue'
 import VInput from '~/components/VInput.vue'
 import {
-    BEAR_TYPES,
     BEAR_DESCRIPTORS,
-    BEAR_ROLES,
     BEAR_HATS,
+    BEAR_NAMES,
+    BEAR_ROLES,
+    BEAR_TYPES,
 } from '~/store/tables'
 
 export default {
@@ -132,10 +133,11 @@ export default {
 
     data: () => {
         return {
-            BEAR_TYPES,
             BEAR_DESCRIPTORS,
-            BEAR_ROLES,
             BEAR_HATS,
+            BEAR_NAMES,
+            BEAR_ROLES,
+            BEAR_TYPES,
             selectedCharacter: {
                 handle: '',
                 type: null,
@@ -149,6 +151,11 @@ export default {
 
     computed: {
         ...mapGetters(['getCharacterById', 'getCharacterByHandle']),
+
+        namePlaceholder() {
+            let namesCount = this.BEAR_NAMES.length
+            return this.BEAR_NAMES[Math.floor(Math.random() * namesCount)]
+        },
 
         selectedTypeString() {
             return this.BEAR_TYPES[this.selectedCharacter.type].type
