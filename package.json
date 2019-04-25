@@ -20,7 +20,7 @@
     "localforage": "1.7.3",
     "localforage-startswith": "1.4.0",
     "lodash.find": "4.6.0",
-    "nuxt": "2.4.0"
+    "nuxt": "2.6.3"
   },
   "devDependencies": {
     "@vue/test-utils": "1.0.0-beta.27",
