@@ -1,6 +1,6 @@
 <template>
     <button
-        class="w3 h3 pa0 bn br-100 white outline-0 pointer"
+        class="w3 h3 pa0 bg-transparent bn br-100 white outline-0 pointer"
         type="button"
         @click="rollDie"
     >
@@ -53,3 +53,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+button svg {
+    stroke: url(#honeyGradient);
+}
+</style>

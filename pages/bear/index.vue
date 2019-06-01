@@ -100,7 +100,7 @@
 
             <div class="measure ph4">
                 <button
-                    class="w-100 ph3 ph5 pv3 mb2 bn br-pill pointer ttu f7 fw7 tracked white dim"
+                    class="submit-button w-100 ph3 ph5 pv3 mb2 bn br-pill pointer ttu f7 fw7 tracked white dim"
                     type="submit"
                 >
                     Submit
@@ -144,6 +144,10 @@ export default {
                 descriptor: null,
                 role: null,
                 hat: null,
+                stats: {
+                    bear: 3,
+                    criminal: 3,
+                },
             },
             editing: false,
         }
@@ -238,7 +242,7 @@ export default {
 </script>
 
 <style>
-form button {
+.submit-button {
     font-family: inherit;
     background-image: linear-gradient(
         30deg,
