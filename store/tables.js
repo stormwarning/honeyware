@@ -70,3 +70,113 @@ export const BEAR_NAMES = [
     'Otso',
     'Fuzzy Wuzzy',
 ]
+
+export const NOTE_TYPES = [
+    'behaviour',
+    'buff',
+    'debuff',
+    'encounter',
+    'item',
+    'reminder',
+    'stat',
+    'time',
+]
+
+export const PUN_RESULTS = [
+    {
+        type: 'reminder',
+        description:
+            'You suddenly realise you’re missing something important. What is it?',
+    },
+    {
+        type: 'stat',
+        description:
+            'You feel yourself becoming a little more criminal and a little less bear.',
+    },
+    {
+        type: 'reminder',
+        description:
+            'You suddenly remember you forgot your rabies vaccination. Ehh, it’ll probably be fine.',
+    },
+    {
+        type: 'item',
+        description:
+            'You find something you forgot about in your pocket. What is it?',
+    },
+    {
+        type: 'stat',
+        description:
+            'You feel yourself becoming a little more bear and a little less criminal.',
+    },
+    {
+        type: 'stat',
+        description:
+            'You recall an inspirational wisdom your mother used to say… [+bear/+criminal depending]',
+    },
+    {
+        type: 'time',
+        description:
+            'You get the hiccups. You’ll continue to hiccup for the next half hour.',
+    },
+    {
+        type: 'behaviour',
+        description:
+            'You feel an itch and realise that you’ve contracted fleas.',
+    },
+    {
+        type: 'time',
+        description:
+            'You feel dizzy. You need to eat something in the next half hour or you may faint.',
+    },
+    {
+        type: 'time',
+        description:
+            'You feel a little nervous. For the next ten minutes, you have a stammer.',
+    },
+    {
+        type: 'time',
+        description:
+            'You fall into sudden hibernation. For the next five minutes, you’re asleep.',
+    },
+    {
+        type: 'character',
+        description:
+            'You find a tiny mouse on your back. It seems to be a new buddy. [+companion]',
+    },
+    {
+        type: 'encounter',
+        description: 'You spot an old friend walking by. Who is it?',
+    },
+    {
+        type: 'buff',
+        description:
+            'You feel strangely lucky right now. [Advantage for next roll]',
+    },
+    {
+        type: 'debuff',
+        description:
+            'You feel strangely unlucky right now. [Disadvantage for next roll]',
+    },
+    {
+        type: 'character',
+        description: 'You feel a little like another person. [Optional reroll]',
+    },
+    {
+        type: 'item',
+        description: 'You find a bag full of 1,000 ball bearings.',
+    },
+    {
+        type: 'behaviour',
+        description: 'You feel as though you may be delicious.',
+    },
+    {
+        type: 'time',
+        description:
+            'You have tinnitus and can’t hear for the next 10 minutes.',
+    },
+    {
+        type: 'item',
+        description:
+            'You find a small honey-flavoured packet in your bear pocket.',
+    },
+]
