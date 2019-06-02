@@ -29,10 +29,23 @@
                 <section
                     class="flex-grow-1 flex-shrink-1 w-40 pa4 ma1 bg-grey-800"
                 >
-                    <h2 class="ma0 f4 fw5">Reminders</h2>
+                    <div class="flex items-center justify-between">
+                        <h2 class="ma0 f4 fw5">Reminders</h2>
+                        <button
+                            class="button-reset bg-transparent pointer bn dib yellow-400 dim no-underline"
+                            type="button"
+                            @click="showModal = true"
+                        >
+                            Add a Bear
+                        </button>
+                    </div>
                 </section>
             </div>
         </main>
+
+        <v-modal v-if="showModal" @close="showModal = false">
+            <h3 slot="header">New reminder</h3>
+        </v-modal>
     </section>
 </template>
 
@@ -41,16 +54,19 @@ import { mapActions, mapGetters } from 'vuex'
 
 import BearStats from '~/components/BearStats.vue'
 import PageHeader from '~/components/PageHeader.vue'
+import VModal from '~/components/VModal.vue'
 
 export default {
     components: {
         PageHeader,
         BearStats,
+        VModal,
     },
 
     data: () => {
         return {
             selectedCharacter: {},
+            showModal: false,
         }
     },
 
