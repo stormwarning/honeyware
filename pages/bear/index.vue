@@ -148,6 +148,7 @@ export default {
                     bear: 3,
                     criminal: 3,
                 },
+                notes: [],
             },
             editing: false,
         }
