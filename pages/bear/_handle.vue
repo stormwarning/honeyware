@@ -39,11 +39,13 @@
                             New note
                         </button>
                     </div>
-                    <!-- <ul v-if="selectedCharacter.notes.length">
-                        <li v-each="note in selectedCharacter.notes">{{
-                            note.description
-                        }}</li>
-                    </ul> -->
+                    <ul v-if="hasNotes">
+                        <li
+                            v-for="(note, index) in selectedCharacter.notes"
+                            :key="index"
+                            >{{ note.description }}</li
+                        >
+                    </ul>
                 </section>
             </div>
         </main>
@@ -114,6 +116,14 @@ export default {
 
     computed: {
         ...mapGetters(['getCharacterById', 'getCharacterByHandle']),
+
+        hasNotes() {
+            if (this.selectedCharacter.notes) {
+                return this.selectedCharacter.notes.length > 0
+            } else {
+                return false
+            }
+        },
     },
 
     mounted() {
