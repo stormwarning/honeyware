@@ -31,7 +31,7 @@
     "ava": "1.0.x",
     "babel-eslint": "10.0.x",
     "browser-env": "3.2.x",
-    "core-js": "2.6.x",
+    "core-js": "3.1.x",
     "eslint": "5.15.x",
     "eslint-loader": "2.1.x",
     "eslint-plugin-nuxt": "0.4.x",
