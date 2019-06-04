@@ -43,8 +43,14 @@
                         <li
                             v-for="(note, index) in selectedCharacter.notes"
                             :key="index"
-                            >{{ note.description }}</li
-                        >
+                            >{{ note.description }}
+                            <button
+                                class="button-reset ph2 pv1 bn br-pill"
+                                @click.prevent="confirmDeleteNote(index)"
+                                ><div class="flex items-center justify-center">
+                                    <trash-icon />
+                                </div> </button
+                        ></li>
                     </ul>
                 </section>
             </div>
@@ -92,6 +98,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import TrashIcon from '~/components/icons/trash.vue'
 import BearStats from '~/components/BearStats.vue'
 import PageHeader from '~/components/PageHeader.vue'
 import VModal from '~/components/VModal.vue'
@@ -100,6 +107,7 @@ import { NOTE_TYPES } from '~/store/tables'
 export default {
     components: {
         PageHeader,
+        TrashIcon,
         BearStats,
         VModal,
     },
@@ -143,7 +151,7 @@ export default {
     },
 
     methods: {
-        ...mapActions(['addNote', 'loadCharacters']),
+        ...mapActions(['addNote', 'deleteNote', 'loadCharacters']),
 
         addNewNote() {
             let type = this.newNoteType
@@ -160,6 +168,23 @@ export default {
                 this.newNoteType = ''
                 this.newNoteDesc = ''
             })
+        },
+
+        confirmDeleteNote(note) {
+            if (confirm(`Are you sure you want to delete this note?`)) {
+                this.deleteNote({
+                    character: this.selectedCharacter,
+                    note,
+                }).then(() => {
+                    let selectedCharacter = this.getCharacterByHandle(
+                        this.$route.params.handle,
+                    )
+
+                    if (selectedCharacter) {
+                        this.selectedCharacter = selectedCharacter
+                    }
+                })
+            }
         },
 
         closeModal() {
