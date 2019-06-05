@@ -4,13 +4,13 @@
             <div
                 ref="list"
                 :style="{ transform: 'translateY(' + spinPosition + 'px)' }"
-                class="flex flex-column pv4 mv2"
+                class="tumbler flex flex-column pv4 mv2"
             >
                 <span
                     v-for="n in values"
                     :key="n"
                     :class="[n === value ? 'o-100' : 'o-20']"
-                    :aria-hidden="n === value ? null : true"
+                    :aria-hidden="n !== value"
                     class="flex items-center justify-center w4 pv2 f3 lh-solid"
                     >{{ n }}</span
                 >
@@ -63,3 +63,12 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.tumbler {
+    transition: transform 150ms;
+}
+.tumbler span {
+    transition: opacity 150ms;
+}
+</style>
