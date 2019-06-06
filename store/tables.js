@@ -4,7 +4,7 @@ export const BEAR_TYPES = [
     { type: 'Panda Bear', skill: 'Eat anything that looks like bamboo' },
     { type: 'Black Bear', skill: 'Climb' },
     { type: 'Sun Bear', skill: 'Sense honey' },
-    { type: 'Honey Badger', skill: 'Carnage' },
+    { type: 'Honey Badger', skill: 'Cause carnage' },
 ]
 
 export const BEAR_DESCRIPTORS = [
@@ -27,11 +27,11 @@ export const BEAR_ROLES = [
 
 export const BEAR_HATS = [
     'Trilby',
-    'Top',
+    'Top hat',
     'Bowler',
     'Flat cap',
-    'Cowboy',
-    'Fex',
+    'Cowboy hat',
+    'Fez',
     'Crown',
     'Reroll',
 ]
