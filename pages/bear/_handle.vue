@@ -24,7 +24,7 @@
                     class="flex-grow-1 flex-shrink-1 w-40 pa4 ma1 bg-grey-800"
                 >
                     <h2 class="ma0 f4 fw5">Stats</h2>
-                    <bear-stats :stats="selectedCharacter.stats" />
+                    <bear-stats v-bind="selectedCharacter.stats" />
                 </section>
                 <section
                     class="flex-grow-1 flex-shrink-1 w-40 pa4 ma1 bg-grey-800"
@@ -112,10 +112,9 @@ export default {
         VModal,
     },
 
-    data: () => {
+    data() {
         return {
             noteTypes: NOTE_TYPES,
-            selectedCharacter: {},
             showModal: false,
             newNoteType: '',
             newNoteDesc: '',
@@ -124,6 +123,10 @@ export default {
 
     computed: {
         ...mapGetters(['getCharacterById', 'getCharacterByHandle']),
+
+        selectedCharacter() {
+            return this.$store.state.selectedCharacter
+        },
 
         hasNotes() {
             if (this.selectedCharacter.notes) {
@@ -142,7 +145,7 @@ export default {
                 )
 
                 if (selectedCharacter) {
-                    this.selectedCharacter = selectedCharacter
+                    this.setCharacter(selectedCharacter)
                 }
 
                 // Else?
@@ -151,7 +154,12 @@ export default {
     },
 
     methods: {
-        ...mapActions(['addNote', 'deleteNote', 'loadCharacters']),
+        ...mapActions([
+            'addNote',
+            'deleteNote',
+            'loadCharacters',
+            'setCharacter',
+        ]),
 
         addNewNote() {
             let type = this.newNoteType
@@ -175,14 +183,6 @@ export default {
                 this.deleteNote({
                     character: this.selectedCharacter,
                     note,
-                }).then(() => {
-                    let selectedCharacter = this.getCharacterByHandle(
-                        this.$route.params.handle,
-                    )
-
-                    if (selectedCharacter) {
-                        this.selectedCharacter = selectedCharacter
-                    }
                 })
             }
         },

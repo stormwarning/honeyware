@@ -28,7 +28,7 @@ export default {
         },
     },
 
-    data: () => {
+    data() {
         return {
             values: [1, 2, 3, 4, 5, 6],
             list: null,

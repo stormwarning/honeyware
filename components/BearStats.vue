@@ -2,13 +2,28 @@
     <div class="flex">
         <stat-spinner :value="bearStat" />
 
-        <div></div>
+        <div>
+            <button
+                type="button"
+                :disabled="bearStat === 5"
+                @click="increaseBearStat"
+                >Bear</button
+            >
+            <button
+                type="button"
+                :disabled="criminalStat === 5"
+                @click="increaseCriminalStat"
+                >Criminal</button
+            >
+        </div>
 
         <stat-spinner :value="criminalStat" />
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import StatSpinner from '~/components/StatSpinner'
 
 export default {
@@ -17,18 +32,41 @@ export default {
     },
 
     props: {
-        stats: {
-            type: Object,
-            default: () => ({ bear: 3, criminal: 3 }),
+        bear: {
+            type: Number,
+            default: 3,
+        },
+        criminal: {
+            type: Number,
+            default: 3,
         },
     },
 
     computed: {
         bearStat() {
-            return this.stats.bear
+            return this.bear
         },
+
         criminalStat() {
-            return this.stats.criminal
+            return this.criminal
+        },
+    },
+
+    methods: {
+        ...mapActions(['updateStats']),
+
+        increaseBearStat() {
+            this.updateStats({
+                bear: this.bear + 1,
+                criminal: this.criminal - 1,
+            })
+        },
+
+        increaseCriminalStat() {
+            this.updateStats({
+                bear: this.bear - 1,
+                criminal: this.criminal + 1,
+            })
         },
     },
 }

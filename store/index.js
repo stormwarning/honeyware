@@ -1,14 +1,14 @@
 import Vue from 'vue'
 
 import cloneDeep from 'lodash.clonedeep'
+import find from 'lodash.find'
 
 import { guid } from '../utils'
 import { saveCharacter, removeCharacter, fetchCharacters } from '../utils/api'
 
-const find = require('lodash.find')
-
 export const state = () => ({
     characters: {},
+    selectedCharacter: {},
 })
 
 export const actions = {
@@ -28,6 +28,20 @@ export const actions = {
     updateCharacter({ commit }, data) {
         commit('UPDATE_CHARACTER', { character: data })
         saveCharacter(data)
+    },
+
+    setCharacter({ commit }, data) {
+        commit('UPDATE_CHARACTER', { character: data })
+    },
+
+    updateStats({ commit, state }, stats) {
+        let modifiedCharacter = cloneDeep(state.selectedCharacter)
+
+        modifiedCharacter.stats = stats
+        commit('UPDATE_CHARACTER', { character: modifiedCharacter })
+        saveCharacter(modifiedCharacter).then(() => {
+            console.log('Stats saved!')
+        })
     },
 
     addNote({ commit }, { character, note }) {
@@ -72,13 +86,12 @@ export const actions = {
 
 export const mutations = {
     CREATE_CHARACTER(state, payload) {
-        console.log('payload:', payload)
         state.characters[payload.character.id] = payload.character
     },
 
     UPDATE_CHARACTER(state, payload) {
-        console.log('mut: update')
         state.characters[payload.character.id] = payload.character
+        state.selectedCharacter = payload.character
     },
 
     DELETE_CHARACTER(state, payload) {
