@@ -6,7 +6,7 @@
                 <p class="ttu fw8 tracked">
                     It’s Honeycon 2019.
                 </p>
-                <p class="mt2">
+                <p class="mt3">
                     You are going to undertake the greatest heist the world has
                     ever seen. Just two things:
                 </p>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="flex items-center justify-between mt5">
-                <h2 class="f4 fw5 ma0 tracked">Available crew</h2>
+                <h2 class="f4 fw5 ma0">Available crew</h2>
 
                 <nuxt-link class="dib yellow-400 dim no-underline" to="/bear">
                     Add a Bear
