@@ -1,5 +1,5 @@
 <template>
-    <div class="flex">
+    <div class="flex items-center justify-between mw6">
         <stat-spinner :value="bearStat" />
 
         <div>

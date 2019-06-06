@@ -11,7 +11,7 @@
                     :key="n"
                     :class="[n === value ? 'o-100' : 'o-20']"
                     :aria-hidden="n !== value"
-                    class="flex items-center justify-center w4 pv2 f3 lh-solid"
+                    class="flex items-center justify-center w3 pv2 f3 lh-solid"
                     >{{ n }}</span
                 >
             </div>

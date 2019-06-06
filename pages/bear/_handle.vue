@@ -1,34 +1,36 @@
 <template>
     <section class="mw8 center">
         <page-header :title="selectedCharacter.handle" />
-        <main class="pa3 pa4-ns">
-            <p class="measure f5 f4-ns lh-copy">
-                A
-                <strong>{{ selectedCharacter.typeString }}</strong>
-                who can
-                <strong>{{ selectedCharacter.skillString }}</strong
-                >. The
-                <strong>
-                    {{ selectedCharacter.descriptorString }}
-                    {{ selectedCharacter.roleString }}
-                </strong>
-                of the crew.
-                <span v-if="selectedCharacter.hatString">
-                    Wears a
-                    <strong>{{ selectedCharacter.hatString }}</strong
-                    >.
-                </span>
-            </p>
-            <div class="flex flex-wrap items-start pv4 nr4 nl4">
-                <section
-                    class="flex-grow-1 flex-shrink-1 w-40 pa4 ma1 bg-grey-800"
-                >
+        <main class="section-grid pa3 pa4-ns">
+            <section class="bio-section">
+                <p class="mv4 measure f4 lh-copy">
+                    A
+                    <strong>{{ selectedCharacter.typeString }}</strong>
+                    who can
+                    <strong>{{ selectedCharacter.skillString }}</strong
+                    >. The
+                    <strong>
+                        {{ selectedCharacter.descriptorString }}
+                        {{ selectedCharacter.roleString }}
+                    </strong>
+                    of the crew.
+                    <span v-if="selectedCharacter.hatString">
+                        Wears a
+                        <strong>{{ selectedCharacter.hatString }}</strong
+                        >.
+                    </span>
+                </p>
+            </section>
+
+            <section class="stats-section">
+                <div class="nl4 nr4 mr0-l pa4 bg-grey-800">
                     <h2 class="ma0 f4 fw5">Stats</h2>
                     <bear-stats v-bind="selectedCharacter.stats" />
-                </section>
-                <section
-                    class="flex-grow-1 flex-shrink-1 w-40 pa4 ma1 bg-grey-800"
-                >
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <div class="nl4 nr4 ml0-l pa4 bg-grey-800">
                     <div class="flex items-center justify-between">
                         <h2 class="ma0 f4 fw5">Notes</h2>
                         <button
@@ -36,7 +38,7 @@
                             type="button"
                             @click="showModal = true"
                         >
-                            New note
+                            Add a note
                         </button>
                     </div>
                     <ul v-if="hasNotes">
@@ -52,8 +54,8 @@
                                 </div> </button
                         ></li>
                     </ul>
-                </section>
-            </div>
+                </div>
+            </section>
         </main>
 
         <v-modal v-if="showModal" ref="modal" @close="showModal = false">
@@ -193,3 +195,32 @@ export default {
     },
 }
 </script>
+
+<style lang="postcss" scoped>
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    grid-gap: 1rem;
+
+    @media screen and (min-width: 60em) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: column;
+    }
+}
+
+.bio-section {
+    grid-column: 1;
+}
+
+.stats-section {
+    grid-column: 1;
+}
+
+.notes-section {
+    @media screen and (min-width: 60em) {
+        grid-row: 1 / 3;
+        grid-column: 2;
+    }
+}
+</style>
