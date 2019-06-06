@@ -4,7 +4,7 @@
             <div
                 ref="list"
                 :style="{ transform: 'translateY(' + spinPosition + 'px)' }"
-                class="tumbler flex flex-column pv4 mv2"
+                class="tumbler relative flex flex-column pv4 mv2"
             >
                 <span
                     v-for="n in values"
