@@ -48,7 +48,9 @@ export default {
     /**
       Nuxt.js modules
      */
-    modules: ['@nuxtjs/pwa'],
+    modules: [
+        ['@nuxtjs/pwa', { meta: { appleStatusBarStyle: 'black-translucent' } }],
+    ],
 
     /**
       Build configuration
