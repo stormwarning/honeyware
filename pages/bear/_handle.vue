@@ -58,10 +58,14 @@
             </section>
         </main>
 
-        <v-modal v-if="showModal" ref="modal" @close="showModal = false">
-            <h3 slot="header">New note</h3>
-            <form slot="body">
-                <label
+        <v-modal
+            ref="modal"
+            :is-modal-open="showModal"
+            @toggle="showModal = !showModal"
+        >
+            <h3 slot="header" class="ma0 f4 fw5 grey-900">New note</h3>
+            <form slot="body" class="mt3">
+                <!-- <label
                     v-for="(type, index) in noteTypes"
                     :key="index"
                     class="flex items-center mv2 mr3 lh-solid pointer"
@@ -74,23 +78,19 @@
                         name="type"
                     />
                     <span class="f7 f6-ns tracked">{{ type }}</span>
-                </label>
-                <textarea v-model="newNoteDesc"></textarea>
+                </label> -->
+                <textarea
+                    v-model="newNoteDesc"
+                    class="input-reset w-100 h3 b--grey-300"
+                ></textarea>
             </form>
-            <div slot="footer">
+            <div slot="footer" class="absolute bottom--1">
                 <button
-                    class="modal-default-button"
+                    class="button-reset pa2 ph4 fw5 ttu white submit-button bw0 br-pill pointer"
                     type="button"
                     @click.prevent="addNewNote"
                 >
                     Save
-                </button>
-                <button
-                    class="modal-default-button"
-                    type="button"
-                    @click="closeModal"
-                >
-                    Cancel
                 </button>
             </div>
         </v-modal>
@@ -164,13 +164,13 @@ export default {
         ]),
 
         addNewNote() {
-            let type = this.newNoteType
+            // let type = this.newNoteType
             let description = this.newNoteDesc
 
             this.addNote({
                 character: this.selectedCharacter,
                 note: {
-                    type,
+                    type: 'reminder',
                     description,
                 },
             }).then(() => {

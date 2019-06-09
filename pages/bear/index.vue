@@ -241,19 +241,3 @@ export default {
     },
 }
 </script>
-
-<style>
-.submit-button {
-    font-family: inherit;
-    background-image: linear-gradient(
-        30deg,
-        #e67700 0%,
-        #f08400 16%,
-        #fa9100 33%,
-        #ffa007 50%,
-        #ffb318 66%,
-        #ffc328 83%,
-        #ffd43b 100%
-    );
-}
-</style>

@@ -1,8 +1,10 @@
 <template>
-    <transition name="modal">
+    <transition v-if="isModalOpen" name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="modal-container">
+                <div
+                    class="modal-container relative center pa4 br2 bg-grey-000 shadow-4"
+                >
                     <div class="modal-header">
                         <slot name="header"></slot>
                     </div>
@@ -11,16 +13,21 @@
                         <slot name="body"></slot>
                     </div>
 
-                    <div class="modal-footer">
-                        <slot name="footer">
-                            default footer
-                            <button
-                                class="modal-default-button"
-                                @click="$emit('close')"
+                    <div class="modal-footer flex align-center justify-center">
+                        <slot name="footer"></slot>
+                    </div>
+
+                    <div class="modal-close absolute top-0 right-0 pa3">
+                        <button
+                            class="button-reset w2 h2 pa2 bw0 bg-transparent pointer"
+                            @click="$emit('toggle')"
+                        >
+                            <div
+                                class="flex items-center justify-center w-100 h-100"
                             >
-                                OK
-                            </button>
-                        </slot>
+                                ×
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -29,7 +36,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+    props: {
+        isModalOpen: {
+            type: Boolean,
+            default: false,
+        },
+    },
+}
 </script>
 
 <style>
@@ -42,7 +56,7 @@ export default {}
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.3s ease;
+    transition: opacity 500ms ease;
 }
 
 .modal-wrapper {
@@ -52,26 +66,7 @@ export default {}
 
 .modal-container {
     width: 300px;
-    padding: 20px 30px;
-    margin: 0 auto;
-    color: var(--grey-800);
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-    transition: all 0.3s ease;
-}
-
-.modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-}
-
-.modal-body {
-    margin: 20px 0;
-}
-
-.modal-default-button {
-    float: right;
+    transition: all 500ms ease;
 }
 
 /*
@@ -87,12 +82,12 @@ export default {}
     opacity: 0;
 }
 
-.modal-leave-active {
+.modal-leave-to {
     opacity: 0;
 }
 
 .modal-enter .modal-container,
-.modal-leave-active .modal-container {
-    transform: scale(1.1);
+.modal-leave-to .modal-container {
+    transform: translateY(25vh);
 }
 </style>

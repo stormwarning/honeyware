@@ -33,6 +33,14 @@ html {
     color: var(--grey-600);
 }
 
+.grey-800 {
+    color: var(--grey-800);
+}
+
+.grey-900 {
+    color: var(--grey-900);
+}
+
 .yellow-300 {
     color: var(--yellow-300);
 }
@@ -41,8 +49,16 @@ html {
     color: var(--yellow-400);
 }
 
+.b--grey-300 {
+    border-color: var(--grey-300);
+}
+
 .b--grey-700 {
     border-color: var(--grey-700);
+}
+
+.bg-grey-000 {
+    background-color: var(--grey-000);
 }
 
 .bg-grey-800 {
@@ -61,4 +77,18 @@ html {
     .bg-transparent-ns {
         background-color: transparent;
     }
+}
+
+.submit-button {
+    font-family: inherit;
+    background-image: linear-gradient(
+        30deg,
+        #e67700 0%,
+        #f08400 16%,
+        #fa9100 33%,
+        #ffa007 50%,
+        #ffb318 66%,
+        #ffc328 83%,
+        #ffd43b 100%
+    );
 }
