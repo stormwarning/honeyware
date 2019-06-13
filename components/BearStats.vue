@@ -1,6 +1,12 @@
 <template>
     <div class="flex items-center justify-between mw6">
-        <stat-spinner :value="bearStat" />
+        <div class="relative w3">
+            <h3
+                class="stat-title absolute top-0 mv0 ph2 f6 fw5 tracked ttu grey-600"
+                >Bear</h3
+            >
+            <stat-spinner :value="bearStat" />
+        </div>
 
         <div>
             <button
@@ -17,7 +23,13 @@
             >
         </div>
 
-        <stat-spinner :value="criminalStat" />
+        <div class="relative w3">
+            <h3
+                class="stat-title absolute top-0 mv0 ph2 f6 fw5 tracked ttu grey-600"
+                >Criminal</h3
+            >
+            <stat-spinner :value="criminalStat" />
+        </div>
     </div>
 </template>
 
@@ -71,3 +83,11 @@ export default {
     },
 }
 </script>
+
+<style lang="postcss" scoped>
+.stat-title {
+    right: 100%;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+}
+</style>
