@@ -37,7 +37,7 @@
     "eslint-plugin-nuxt": "0.4.x",
     "eslint-plugin-vue": "5.2.x",
     "husky": "2.4.x",
-    "lint-staged": "8.1.x",
+    "lint-staged": "8.2.x",
     "nodemon": "1.18.x",
     "require-extension-hooks": "0.3.x",
     "require-extension-hooks-babel": "1.0.x",
