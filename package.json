@@ -40,7 +40,7 @@
     "lint-staged": "8.1.x",
     "nodemon": "1.18.x",
     "require-extension-hooks": "0.3.x",
-    "require-extension-hooks-babel": "0.1.x",
+    "require-extension-hooks-babel": "1.0.x",
     "require-extension-hooks-vue": "2.0.x",
     "stylelint": "9.10.x"
   },
