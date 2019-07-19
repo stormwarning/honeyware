@@ -1,7 +1,7 @@
 <template>
     <section class="mw8 center">
         <page-header :title="selectedCharacter.handle" />
-        <main class="section-grid pa3 pa4-ns">
+        <main class="section-grid pa3 pa4-ns overflow-hidden">
             <section class="bio-section">
                 <p class="mv4 measure f4 lh-copy">
                     A
