@@ -28,7 +28,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "@zazen/eslint-config": "1.0.x",
     "@zazen/stylelint-config": "1.0.x",
-    "ava": "2.2.x",
+    "ava": "2.3.x",
     "babel-eslint": "10.0.x",
     "browser-env": "3.2.x",
     "core-js": "2.6.x",
