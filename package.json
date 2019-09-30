@@ -33,7 +33,7 @@
     "browser-env": "3.2.x",
     "core-js": "2.6.x",
     "eslint": "5.16.x",
-    "eslint-loader": "2.2.x",
+    "eslint-loader": "3.0.x",
     "eslint-plugin-nuxt": "0.4.x",
     "eslint-plugin-vue": "5.2.x",
     "husky": "3.0.x",
