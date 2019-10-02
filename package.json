@@ -24,25 +24,25 @@
     "nuxt": "2.8.1"
   },
   "devDependencies": {
-    "@babel/runtime-corejs2": "7.5.x",
+    "@babel/runtime-corejs3": "7.6.x",
     "@vue/test-utils": "1.0.0-beta.29",
     "@zazen/eslint-config": "1.0.x",
     "@zazen/stylelint-config": "1.0.x",
-    "ava": "2.2.x",
+    "ava": "2.4.x",
     "babel-eslint": "10.0.x",
     "browser-env": "3.2.x",
-    "core-js": "2.6.x",
-    "eslint": "5.16.x",
-    "eslint-loader": "2.2.x",
+    "core-js": "3.2.x",
+    "eslint": "6.5.x",
+    "eslint-loader": "3.0.x",
     "eslint-plugin-nuxt": "0.4.x",
     "eslint-plugin-vue": "5.2.x",
     "husky": "3.0.x",
-    "lint-staged": "9.2.x",
+    "lint-staged": "9.4.x",
     "nodemon": "1.19.x",
     "require-extension-hooks": "0.3.x",
     "require-extension-hooks-babel": "1.0.x",
-    "require-extension-hooks-vue": "2.0.x",
-    "stylelint": "10.1.x"
+    "require-extension-hooks-vue": "3.0.x",
+    "stylelint": "11.0.x"
   },
   "husky": {
     "hooks": {
