@@ -42,7 +42,7 @@
     "require-extension-hooks": "0.3.x",
     "require-extension-hooks-babel": "1.0.x",
     "require-extension-hooks-vue": "3.0.x",
-    "stylelint": "11.0.x"
+    "stylelint": "11.1.x"
   },
   "husky": {
     "hooks": {
