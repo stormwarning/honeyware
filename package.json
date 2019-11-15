@@ -35,7 +35,7 @@
     "eslint": "6.5.x",
     "eslint-loader": "3.0.x",
     "eslint-plugin-nuxt": "0.4.x",
-    "eslint-plugin-vue": "5.2.x",
+    "eslint-plugin-vue": "6.0.x",
     "husky": "3.0.x",
     "lint-staged": "9.4.x",
     "nodemon": "1.19.x",
