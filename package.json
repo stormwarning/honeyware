@@ -32,7 +32,7 @@
     "babel-eslint": "10.0.x",
     "browser-env": "3.2.x",
     "core-js": "3.2.x",
-    "eslint": "6.5.x",
+    "eslint": "6.8.x",
     "eslint-loader": "3.0.x",
     "eslint-plugin-nuxt": "0.4.x",
     "eslint-plugin-vue": "5.2.x",
