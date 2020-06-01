@@ -34,7 +34,7 @@
     "core-js": "3.2.x",
     "eslint": "6.5.x",
     "eslint-loader": "3.0.x",
-    "eslint-plugin-nuxt": "0.4.x",
+    "eslint-plugin-nuxt": "1.0.x",
     "eslint-plugin-vue": "5.2.x",
     "husky": "3.0.x",
     "lint-staged": "9.4.x",
