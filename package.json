@@ -15,7 +15,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "3.0.0-beta.16",
+    "@nuxtjs/pwa": "3.3.3",
     "cross-env": "5.2.0",
     "localforage": "1.7.3",
     "localforage-startswith": "1.4.0",
