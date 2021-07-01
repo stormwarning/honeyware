@@ -24,7 +24,7 @@
     "nuxt": "2.8.1"
   },
   "devDependencies": {
-    "@babel/runtime-corejs3": "7.6.x",
+    "@babel/runtime-corejs3": "7.14.x",
     "@vue/test-utils": "1.0.0-beta.29",
     "@zazen/eslint-config": "1.0.x",
     "@zazen/stylelint-config": "1.0.x",
